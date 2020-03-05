@@ -33,6 +33,9 @@ dunamic urls:
 
 
 createsuperuser :
-python manage.py createsuperuser
+python manage.py createsuperuser 
+
+static resources:
+  
 
 
