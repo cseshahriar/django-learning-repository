@@ -19,3 +19,14 @@ django-admin startproject projectname
 
 run project:
 python manage.py runserver   
+
+create app:
+python manage.py startapp pages 
+
+urls:  
+	function views:-
+
+	class base views:-  
+	include :-
+
+
