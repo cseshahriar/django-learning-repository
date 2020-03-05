@@ -1,13 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+ 
 # Create your views here.
-def member(request, id):
-    return HttpResponse("<h1>Team Member ID: {}</h1>".format(id))
+def home(request):
+    return render(request, 'index.html', {'title' : 'Home Page Title'})
 
-    
-def team(request):
-    return HttpResponse("<h1>Team Member List</h1>") 
+def about(request):
+    return render(request, 'about.html',  {'title' : 'About Page Title'})
+
+def contact(request):
+    return render(request, 'contact.html',  {'title' : 'Contact Page Title'})
 
 
  

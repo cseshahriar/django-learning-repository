@@ -1,8 +1,9 @@
 from django.urls import path
-from pages.views import member, team
+from pages.views import home, about, contact
 
 urlpatterns = [
-    path('members/', team, name='team'),
-    path('member/<int:id>', member, name='member')    
+    path('', home, name='home'),    
+    path('about/', about, name='about'),    
+    path('contact/', contact, name='contact'),    
 ]   
   

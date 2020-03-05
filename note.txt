@@ -30,6 +30,9 @@ urls:
 	including another urls :-
 
 dunamic urls:
- 
+
+
+createsuperuser :
+python manage.py createsuperuser
 
 
