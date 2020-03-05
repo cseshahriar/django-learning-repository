@@ -29,4 +29,7 @@ urls:
 	class base views:-  
 	including another urls :-
 
+dunamic urls:
+ 
+
 
