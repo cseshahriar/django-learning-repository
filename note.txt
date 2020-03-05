@@ -1,0 +1,21 @@
+Django Lrearning Prerequisites: 
+	1. HTML - ok
+	2. CSS  - ok 
+	3. JavaScript - ok 
+	4. Python - primarily ok
+	6. SQL - ok
+
+Tools:
+ 1. python3 
+ 2. pip 
+ 3. pycharm  or vscode 
+
+
+django install:
+pip install Django==2.2.1
+
+create project:
+django-admin startproject projectname 
+
+run project:
+python manage.py runserver   
