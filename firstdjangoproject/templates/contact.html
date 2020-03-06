@@ -52,6 +52,7 @@
                 <th scope="col">Address</th>
                 <th scope="col">City</th>
                 <th scope="col">Zip</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
 
@@ -64,6 +65,10 @@
                 <td>{{ data.address }}</td>
                 <td>{{ data.city }}</td>
                 <td>{{ data.zipcode }}</td>
+                <td>
+                    <a href="/contact?id={{data.id}}&method=edit" class="btn btn-sm btn-info">Edit</a>
+                    <a href="/contact?id={{data.id}}&method=delete" class="btn btn-sm btn-danger">Delete</a>
+                </td>
               </tr>
               {% endfor %} 
             </tbody>
