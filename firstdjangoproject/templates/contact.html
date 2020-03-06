@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <h1>Contact Us</h1>
+      <form method="POST" action="/contact/">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" id="name" required>
+            </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" name="email" class="form-control" id="inputEmail4" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+  
+          <div class="form-group col-md-5">
+            <label for="inputAddress">Address</label>
+            <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+          </div>
+          <div class="form-group col-md-5">
+            <label for="inputCity">City</label>
+            <input type="text" name="city" class="form-control" id="inputCity" required>
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" name="zipcode" class="form-control" id="inputZip" required>
+          </div>
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Sl</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">Zip</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for data in rows %}
+              <tr>
+                <td>{{ data.id }}</td>
+                <td>{{ data.name }}</td>
+                <td>{{ data.email }}</td>
+                <td>{{ data.address }}</td>
+                <td>{{ data.city }}</td>
+                <td>{{ data.zipcode }}</td>
+              </tr>
+              {% endfor %} 
+            </tbody>
+
+          </table>
+    </div>
+  </div>
+</div>  
+{% endblock %}
