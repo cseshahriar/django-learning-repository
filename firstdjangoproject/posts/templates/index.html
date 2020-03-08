@@ -7,20 +7,15 @@
         <h2>Create Post</h2>
         <div class="row">
             <form method="post" novalidate>
-              {% csrf_token %}
+              {% csrf_token %} 
 
-                {% if form.title.errors %}
-                  {% for err_title in form.title.errors %}
-                      <p class="alert alert-danger">{{ err_title | escape }}</p> 
+                {% if form.errors %} 
+                  {% for errors in form.non_field_errors %}
+                      <p class="alert alert-danger">{{ errors | escape }}</p>  
                   {% endfor %}
                 {% endif %}
 
-                {% if form.content.errors %}
-                  {% for err_content in form.content.errors %}
-                      <p class="alert alert-danger">Content {{ err_content | escape }}</p> 
-                  {% endfor %}
-                {% endif %} 
-                 
+               
                 {% for f in form %} 
                   <p>
                     {{ f.label_tag }}
