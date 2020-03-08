@@ -7,8 +7,26 @@
         <h2>Create Post</h2>
         <div class="row">
             <form method="post" novalidate>
-                {% csrf_token %}
-                {{ form|crispy }}
+              {% csrf_token %}
+
+                {% if form.title.errors %}
+                  {% for err_title in form.title.errors %}
+                      <p class="alert alert-danger">{{ err_title | escape }}</p> 
+                  {% endfor %}
+                {% endif %}
+
+                {% if form.content.errors %}
+                  {% for err_content in form.content.errors %}
+                      <p class="alert alert-danger">Content {{ err_content | escape }}</p> 
+                  {% endfor %}
+                {% endif %} 
+                 
+                {% for f in form %} 
+                  <p>
+                    {{ f.label_tag }}
+                  </p> 
+                  <p>{{ f }}</p>
+                {% endfor %}
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>
     </div>
