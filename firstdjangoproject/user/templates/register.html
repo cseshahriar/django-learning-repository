@@ -1,0 +1,65 @@
+{% extends 'user/layout.html' %}
+
+{% block content %}
+<!-- Container --> 
+<div id="container">
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+            <h1 id="site-name"><a href="/user/login">User Login</a></h1>
+        </div>
+    </div>
+    <!-- END Header -->
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        <div id="content-main">
+            <form action="/user/register" method="post" id="login-form" class="register-form">
+               {% csrf_token %} 
+               <div class="form-row"> 
+                    {% if form.username.errors %} 
+                        <ul class="error-list list-unstyled">
+                            <li>{{ form.username.errors | escape }}</li>
+                        </ul>
+                    {% endif %}
+                     
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+
+
+                </div> 
+                <div class="form-row">
+                    {% if form.password1.errors %}
+                    <ul class="error-list list-unstyled">
+                        <li>{{ form.password1.errors | escape }}</li>
+                    </ul>
+                    {% endif %}
+
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+
+                </div>
+                <div class="form-row">
+                    {% if form.password2.errors %} 
+                    <ul class="error-list list-unstyled">
+                        <li>{{ form.password2.errors | escape }}</li>
+                    </ul> 
+                    {% endif %}
+                    
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                  
+                </div>
+            <div class="submit-row">
+                <label>&nbsp;</label><input type="submit" value="Register">
+            </div>
+            </form>
+        </div>
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+{% endblock %} 

@@ -1,0 +1,59 @@
+{% extends 'user/layout.html' %}
+
+{% block content %}
+<!-- Container --> 
+<div id="container">
+    <!-- Header -->
+    <div id="header"> 
+        <div id="branding">
+            <h1 id="site-name"><a href="/user/register">User Register</a></h1> 
+        </div>
+    </div>
+    <!-- END Header -->
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        <div id="content-main">
+
+            {% if messages %}
+                {% for message in messages %}
+                     <p class="alert alert-success">{{ message | escape }}</p>
+                {% endfor %}
+            {% endif %} 
+
+            <form action="/user/login" method="post" id="login-form"><input type="hidden" name="csrfmiddlewaretoken" value="8rXVRn1izP0v2kCU9cMpLIOed8x5wtxuwV0I2KSkPV5pkxxmJmquipPvmd8GNekI">
+            {% csrf_token %} 
+            <div class="form-row">
+                {% if form.username.errors %} 
+                <ul class="error-list">
+                    <li>{{ form.username.errors | escape }}</li>
+                </ul> 
+                {% endif %}
+                
+
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div> 
+            <div class="form-row">
+                {% if form.password.errors %} 
+                <ul class="error-list">
+                    <li>{{ form.password.errors | escape }}</li>
+                </ul> 
+                {% endif %}
+                
+                {{ form.password.label_tag }}
+                {{ form.password }}
+            </div>
+            <div class="submit-row">
+                <label>&nbsp;</label><input type="submit" value="Log in">
+            </div>
+            </form>
+        </div>
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+{% endblock %} 

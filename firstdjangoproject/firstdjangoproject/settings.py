@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'pages',
     'posts.apps.PostsConfig',
     'crispy_forms',
-]
+    'user.apps.UserConfig' 
+] 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

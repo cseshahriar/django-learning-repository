@@ -1,0 +1,27 @@
+</html>
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+<title>Log in | {{ title }}</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta name="robots" content="NONE,NOARCHIVE">
+<style>
+    .login .form-row #id_username, .login .form-row #id_email, .login .form-row #id_password, .login .form-row #id_rpassword, .register-form .form-row #id_password1,.register-form .form-row #id_password2 { 
+        clear: both;
+        padding: 8px;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; 
+    }
+</style>
+</head>
+<body class=" login" data-admin-utc-offset="21600">
+    {% block content %} 
+    {% endblock %}
+</body>
+</html> 
